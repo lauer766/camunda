@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="definitions_1j67s5h" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="rating" name="Rating">
+    <extensionElements>
+      <biodi:bounds x="206" y="200" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="input1" label="Age" camunda:inputVariable="">
+        <inputExpression id="inputExpression1" typeRef="integer">        <text>age</text>
+</inputExpression>
+      </input>
+      <input id="InputClause_0xfhhij" label="Name" camunda:inputVariable="">
+        <inputExpression id="LiteralExpression_03a3uxc" typeRef="string">        <text>name</text>
+</inputExpression>
+      </input>
+      <input id="InputClause_0kngxmc" label="Brand" camunda:inputVariable="">
+        <inputExpression id="LiteralExpression_1r6nl5b" typeRef="string">        <text>brand</text>
+</inputExpression>
+      </input>
+      <input id="InputClause_11rs4pe" label="License Plate" camunda:inputVariable="">
+        <inputExpression id="LiteralExpression_07evdv5" typeRef="string">        <text>licensePlate</text>
+</inputExpression>
+      </input>
+      <input id="InputClause_02gaqwa" label="Category" camunda:inputVariable="">
+        <inputExpression id="LiteralExpression_1ln97k2" typeRef="string">        <text>category</text>
+</inputExpression>
+        <inputValues id="UnaryTests_1fp7ez6">        <text><![CDATA["Luxury","Standard","SUV","Truck","Motorcycle"]]></text>
+</inputValues>
+      </input>
+      <input id="InputClause_0ycyzwo" label="Insurance Type" camunda:inputVariable="">
+        <inputExpression id="LiteralExpression_0pc5h80" typeRef="string">        <text>insuranceType</text>
+</inputExpression>
+        <inputValues id="UnaryTests_0zb5ytg">        <text><![CDATA["Bronze","Silver","Gold"]]></text>
+</inputValues>
+      </input>
+      <input id="InputClause_02eutnt" label="Car Age" camunda:inputVariable="">
+        <inputExpression id="LiteralExpression_0ukgblr" typeRef="integer">        <text>carAge</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Rating" name="rating" typeRef="integer" />
+      <rule id="row-15034492-1">
+        <description><![CDATA["Reject immediately"]]></description>
+        <inputEntry id="UnaryTests_0f92hh5">        <text><![CDATA[< 17]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1wtfy2e">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_085mee0">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1ai2irq">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0rg1286">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0cx7osu">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1swzz00">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0znucmx">        <text>1</text>
+</outputEntry>
+      </rule>
+      <rule id="row-15034492-2">
+        <description><![CDATA["Reject immediately"]]></description>
+        <inputEntry id="UnaryTests_007a0mw">        <text><![CDATA[> 80]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_096rg0h">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1os3d9k">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_05f5m4b">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1iykdlo">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1t158ur">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0nhr5ho">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1eoltl8">        <text>1</text>
+</outputEntry>
+      </rule>
+      <rule id="row-15034492-3">
+        <description><![CDATA["Reject immediately"]]></description>
+        <inputEntry id="UnaryTests_0mi7ose">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1uvb36j">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1f6u2dn">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0oevotk">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0n409i8">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1k3d3sj">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1gv4oyv">        <text><![CDATA[> 30]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1x7bldf">        <text>1</text>
+</outputEntry>
+      </rule>
+      <rule id="row-15034492-4">
+        <description><![CDATA["Could be risky"]]></description>
+        <inputEntry id="UnaryTests_09s7izx">        <text>[17..25]</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1b3aipu">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1pmsplg">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0vzfpbp">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0dnl9z8">        <text><![CDATA["Luxury"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0b9nrkj">        <text><![CDATA[not("Gold")]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1vpwpcy">        <text>[0..30]</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0zzz7z4">        <text>2</text>
+</outputEntry>
+      </rule>
+      <rule id="row-15034492-5">
+        <description><![CDATA["Could be risky"]]></description>
+        <inputEntry id="UnaryTests_0vo4mhu">        <text>]50..80]</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0r30pi1">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1ataibc">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0j4pcze">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0ue6wz5">        <text><![CDATA["Luxury"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0wetk0g">        <text><![CDATA[not("Gold")]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1djtqfc">        <text>[0..30]</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_199l7yv">        <text>2</text>
+</outputEntry>
+      </rule>
+      <rule id="row-15034492-6">
+        <description><![CDATA["Could be risky"]]></description>
+        <inputEntry id="UnaryTests_0q0cykp">        <text>80</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0oqekla">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1riqumd">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_18ssr8w">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1atdh9g">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1dlmm7e">        <text><![CDATA[not("Gold")]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0496i4q">        <text>[0..30]</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1xgtuzt">        <text>2</text>
+</outputEntry>
+      </rule>
+      <rule id="row-15034492-7">
+        <description><![CDATA["Premium customer"]]></description>
+        <inputEntry id="UnaryTests_1wjx5e6">        <text>[17..90]</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1y65yp0">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0kiw6ad">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1kk75uw">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0ftbha6">        <text><![CDATA["Luxury"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0wakbqf">        <text><![CDATA["Gold"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0et4ong">        <text>[0..60]</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1g98g9e">        <text>3</text>
+</outputEntry>
+      </rule>
+      <rule id="row-15034492-8">
+        <description><![CDATA["Premium customer"]]></description>
+        <inputEntry id="UnaryTests_0sttmpf">        <text>[17..80]</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0nnjlm7">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0jmsp0k">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0ylqrk0">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1uulrbx">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_034v301">        <text><![CDATA["Gold"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_04sd43o">        <text>[0..30]</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1yly5c8">        <text>3</text>
+</outputEntry>
+      </rule>
+      <rule id="row-15034492-9">
+        <description><![CDATA["Seems about right"]]></description>
+        <inputEntry id="UnaryTests_1vlvs16">        <text>[17..50]</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1drmtij">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_12brjn0">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0nwpx29">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_03rthap">        <text><![CDATA[not("Luxury")]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1i463az">        <text><![CDATA[not("Gold")]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1437btp">        <text>[0..30]</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0260pvw">        <text>4</text>
+</outputEntry>
+      </rule>
+      <rule id="row-15034492-10">
+        <description><![CDATA["Seems about right"]]></description>
+        <inputEntry id="UnaryTests_05pnu5v">        <text>]25..50]</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1do6suc">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_08o5nce">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1hrbgek">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_02968qn">        <text><![CDATA["Luxury"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1t2yvrk">        <text><![CDATA[not("Gold")]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1kfpnsq">        <text>[0..30]</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_12uswyc">        <text>4</text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

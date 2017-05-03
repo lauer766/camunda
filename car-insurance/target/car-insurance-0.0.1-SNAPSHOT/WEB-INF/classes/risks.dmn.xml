@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions_1lvrwd1" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="risks" name="Risks">
+    <decisionTable id="decisionTable">
+      <input id="input1" label="Rating" camunda:inputVariable="">
+        <inputExpression id="inputExpression1" typeRef="integer">        <text>rating</text>
+</inputExpression>
+      </input>
+      <input id="InputClause_1i6yxuo" label="Had accident in last 3 years?" camunda:inputVariable="">
+        <inputExpression id="LiteralExpression_1k7y2tq" typeRef="boolean">        <text>hadAccident</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Result" name="result" typeRef="string">
+        <outputValues id="UnaryTests_0g9sctf">        <text><![CDATA["red","orange","green"]]></text>
+</outputValues>
+      </output>
+      <rule id="row-15034492-11">
+        <description><![CDATA["Under no circumstances"]]></description>
+        <inputEntry id="UnaryTests_1cn3pc9">        <text>1</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_00svpym">        <text>true</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0625opb">        <text><![CDATA["red"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-15034492-12">
+        <description><![CDATA["Under no circumstances"]]></description>
+        <inputEntry id="UnaryTests_13drajf">        <text>1</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0a3ikji">        <text>false</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0336qnu">        <text><![CDATA["red"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-15034492-13">
+        <description><![CDATA["Risky, but no"]]></description>
+        <inputEntry id="UnaryTests_1qneyck">        <text>2</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0tcf030">        <text>true</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0lbcplg">        <text><![CDATA["red"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-15034492-14">
+        <description><![CDATA["Risky, need manual acceptance"]]></description>
+        <inputEntry id="UnaryTests_1qkwpm9">        <text>2</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0nukakh">        <text>false</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0aeglz0">        <text><![CDATA["orange"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-15034492-15">
+        <description><![CDATA["Preium, need manual acceptance"]]></description>
+        <inputEntry id="UnaryTests_0jpcf0q">        <text>3</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0p8x41u">        <text>true</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0sai9f5">        <text><![CDATA["orange"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-15034492-16">
+        <description><![CDATA["Premium, OK"]]></description>
+        <inputEntry id="UnaryTests_0fz1v7b">        <text>3</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_15uteta">        <text>false</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1risoho">        <text><![CDATA["green"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-15034492-17">
+        <description><![CDATA["Alrigth, but need manual acceptance"]]></description>
+        <inputEntry id="UnaryTests_14jb7hk">        <text>4</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1jet7jm">        <text>true</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0qt7jyg">        <text><![CDATA["orange"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-15034492-18">
+        <description><![CDATA["Alrigth, everything OK"]]></description>
+        <inputEntry id="UnaryTests_07fvimq">        <text>4</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0foiyq1">        <text>false</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_13gb30q">        <text><![CDATA["green"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
